@@ -1,0 +1,80 @@
+.imgContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: space-between;
+    justify-content: center;
+    gap: 10px 10px;
+    margin: 0 10% 0 10%;
+
+}
+.heading{
+    font-family:'Courier New', Courier, monospace;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+}
+.img{
+    width: 160px;
+    height: 200px;
+    border-radius: 15%;
+}
+.smallButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 35px;
+    flex-basis: 100%;
+    padding-right: 135px;
+}
+.button{
+    border: none;
+    background-color: white;
+}
+.upperButtons{
+    display: flex;
+    flex-direction: row;
+}
+.infotech_button{
+    background-image: url(https://avatars.mds.yandex.net/i?id=e816f76c31396a27441249b445e250c87246b81e-5110375-images-thumbs&n=13);
+    background-size: 135px 35px;
+    min-width: 135px;
+    height: 35px;
+    border: white;
+}
+.peopleContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: space-between;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    padding: 0 15% 0 15%;
+}
+.button2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 210px;
+    width: 180px;
+    border-width: 2px;
+    background-color: rgb(240, 236, 236);
+    border-color:rgba(188, 235, 255, 0.877);
+    border-radius: 15%;
+    padding-right: 5%;
+    padding-left: 5%;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+}
+.button2:hover{
+    background-color: rgb(222, 238, 244);
+}
+.img2{
+    align-self: center;
+    justify-self: flex-start;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
