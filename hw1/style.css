@@ -1,4 +1,4 @@
-.imgContainer{
+.images-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -30,57 +30,55 @@
     min-height: 35px;
     flex-basis: 100%;
     padding-right: 135px;
+    gap: 0 10px;
 }
 
-.button{
-    border: none;
-    background-color: white;
+.upper-small-link{
+    text-decoration: none;
 }
 .upper-links{
     display: flex;
     flex-direction: row;
 }
 
-.upper-link__infotech-link{
+.upper-links__infotech-link{
     background-image: url(https://avatars.mds.yandex.net/i?id=e816f76c31396a27441249b445e250c87246b81e-5110375-images-thumbs&n=13);
     background-size: 135px 35px;
     min-width: 135px;
     height: 35px;
-    border: white;
+    border: none;
 }
 
-.peopleContainer{
+.cards-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: space-between;
     flex-wrap: wrap;
     gap: 20px 20px;
     padding: 0 15% 0 15%;
 }
 
-.button2{
+.card{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 210px;
-    width: 180px;
+    height: 200px;
+    width: 120px;
     border-width: 2px;
     background-color: rgb(240, 236, 236);
-    border-color:rgba(188, 235, 255, 0.877);
+    border-color: rgba(188, 235, 255, 0.877);
     border-radius: 15%;
-    padding-right: 5%;
-    padding-left: 5%;
-    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+    padding: 0 5% 0 5%;
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
-.button2:hover{
-    background-color: rgb(222, 238, 244);
+.card:hover{
+    background-color: rgb(218, 243, 253);
 }
 
-.img2{
+.card__image{
     align-self: center;
     justify-self: flex-start;
     height: 60px;
