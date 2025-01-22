@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: space-between;
     justify-content: center;
     gap: 10px 10px;
     margin: 0 10% 0 10%;
@@ -11,10 +10,18 @@
 
 .heading{
     font-family:'Courier New', Courier, monospace;
-    color: black;
+    font-size: 45px;
+    color:#002B6B;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 40px;
+}
+
+.small-heading{
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: #002B6B;
 }
 
 .images-container_image{
@@ -29,22 +36,21 @@
     justify-content: center;
     min-height: 35px;
     flex-basis: 100%;
-    padding-right: 135px;
-    gap: 0 10px;
+    padding-right: 10%;
+    gap: 0 15px;
 }
 
 .upper-small-link{
     text-decoration: none;
 }
+
 .upper-links{
     display: flex;
     flex-direction: row;
 }
 
 .upper-links__infotech-link{
-    background-image: url(https://avatars.mds.yandex.net/i?id=e816f76c31396a27441249b445e250c87246b81e-5110375-images-thumbs&n=13);
-    background-size: 135px 35px;
-    min-width: 135px;
+    width: 135px;
     height: 35px;
     border: none;
 }
@@ -75,7 +81,7 @@
 }
 
 .card:hover{
-    background-color: rgb(218, 243, 253);
+    background-color: rgb(206, 239, 251);
 }
 
 .card__image{
