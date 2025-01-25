@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Form</title>
+       <link rel="stylesheet" href="style.css" />
+       <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <div class="main-class">
+            <img src="floppa.png" alt="a" 
+                style="width: 50%; height: 100%; min-width: 200px; min-height: 200px;"/>
+            <div class="main-content">
+                <h1 class="heading">The form</h1>
+                <form class="form" action="form.php" method="post">
+                    <div class="first-name">
+                        <label for="elem" class="label">First name:</label>
+                        <input type="text" name="first-name" class="input"/>
+                    </div>
+                    <div class="elem">
+                        <label for="last-name" class="label">Last name:</label>
+                        <input type="text" name="last-name" class="input"/>
+                    </div>
+                    <div class="elem">
+                        <label for="email" class="label">Email:</label>
+                        <input type="text" name="email" required class="input"/>
+                    </div>
+                    <div class="elem">
+                        <label for="age" class="label">Age:</label>
+                        <input type="text" name="age" class="input"/>
+                    </div>
+                    <div class="buttons">
+                        <button type="submit" value="Submit" class="button">Submit</button>
+                        <button type="reset" value="Reset" class="button">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

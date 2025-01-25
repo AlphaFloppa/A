@@ -1,0 +1,55 @@
+.heading{
+    text-align: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px 0;
+    align-items: center;
+}
+
+.elem{
+    display: flex;
+    flex-direction: row;
+} 
+
+.label{
+    width: 75px;
+}
+
+.buttons{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:0 50px;
+}
+
+.button{
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+    border-color: rgb(162, 160, 160);
+    width: 75px;
+}
+
+.button:hover{
+    background-color: rgb(167, 241, 245);
+}
+
+.input{
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+.main-class{
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    margin: 10% 0 10% 10%;
+
+}
