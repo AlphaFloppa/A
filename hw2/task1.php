@@ -8,10 +8,10 @@ if (empty($text)) {
 
 function RemoveExtraSymbols(string $text): string	
 {    
-     if((count(str_split($text)) == array_count_values(str_split($text))['*']) && (count(str_split($text)) <> 1)){
-         return preg_replace('~\*+~', '*' , $text) . '*'; 
-     } 
-     return preg_replace('~\*+~', '*' , $text);   
+    if((substr_count($text, '*') == strlen($text)) && (strlen($text) > 1)){
+        return preg_replace('~\*+~', '*' , $text) . '*'; 
+    } 
+    return preg_replace('~\*+~', '*' , $text);   
 }
 
 

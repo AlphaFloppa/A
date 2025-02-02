@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#floppa-img{
+    visibility: hidden;
+    width:80%;
+    height:80%;
+    margin-top: 10px;
+}
+
+#main-element{
+    width: 120px;
+    height: 35px;
+}

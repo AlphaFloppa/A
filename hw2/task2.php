@@ -52,7 +52,10 @@ function checkPasswordStrength(
         $strengh -= $passwordLength;
     }
      
-    return $strengh - $repeatedSymbolsCount;
+    if(IsValid()){
+        return $strengh - $repeatedSymbolsCount;
+    }
+    return 0;
 }
 
 # Получение пароля через GET-запрос
@@ -62,12 +65,20 @@ if (empty($text)) {
 }
 
 
-$array = str_split('qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890');
-$text_array = str_split($text);
-foreach($text_array as $item){
-    if(!in_array($item, $array)){
-            echo nl2br("Found fordidden symbol - {$item} \n");
+function IsValid(): bool
+{
+    $isValid = true;
+    $errorList = [];
+    foreach(str_split($_GET['text']) as $item){
+        if(!in_array($item, str_split("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"))){
+            if(!in_array($item, $errorList)){
+                echo nl2br("Found fordidden symbol - {$item} \n");
+                $errorList[] = $item;
+            }
+            $isValid = false;
         }
+    }
+    return $isValid;
 }
 # Тут необходимо добавить проверки на наличие лишних символов в строке
 # Пароль должен состоять только из английских символов в верхнем и нижнем регистрах, а также из цифр
@@ -100,3 +111,6 @@ $passwordStrength = checkPasswordStrength(
 );
 
 echo('Strength of your password = ' . $passwordStrength);
+if(!IsValid){
+    echo "in cause of wrong password";                                 //$passwordStrength will be 0 at this way
+}

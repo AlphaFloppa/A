@@ -16,6 +16,7 @@
 } 
 
 .label{
+    display: flexbox;
     width: 75px;
 }
 
@@ -52,4 +53,11 @@
     flex-direction: column;
     margin: 10% 0 10% 10%;
 
+}
+
+.floppa-img{
+    width: 50%;
+    height: 100%;
+    min-width: 200px;
+    min-height: 200px;    
 }

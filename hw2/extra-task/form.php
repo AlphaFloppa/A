@@ -1,6 +1,7 @@
 <?php
 declare(strict_types = 1);
 $email = $_POST['email'];
+$isChanged = false;
 if(!preg_match("~.+@\w+\.\w+~", $email) || (preg_match("~\D~", $_POST['age']))){
     echo 'incorrect email or age';
 }
@@ -16,16 +17,18 @@ else{
     $array = file($filePath);
     if($_POST['first-name'] != ''){
         $array[1] = preg_replace("~:\w+~", ':' . $_POST['first-name'], $array[1]);
-        file_put_contents($filePath, implode("", $array));
+        $isChanged = true;
     }
     if($_POST['last-name'] != ''){
         $array[2] = preg_replace("~:\w+~", ':' . $_POST['last-name'], $array[2]);
-        file_put_contents($filePath, implode("", $array)    );
+        $isChanged = true;
     }
     if($_POST['age'] != ''){
         $array[3] = preg_replace("~:.+~", ':' . $_POST['age'], $array[3]);
-        file_put_contents($filePath, implode("", $array)    )    ;
-    
+        $isChanged = true;
+    }
+    if($isChanged){
+        file_put_contents($filePath, implode("", $array));
     }
     echo 'OK';
 }
