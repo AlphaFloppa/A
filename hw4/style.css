@@ -1,0 +1,174 @@
+.body{
+    background-color: #040507;
+    margin: 0px;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.suggest-text{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input{
+    border: 1px solid #3d444d;
+    border-radius: 6px; 
+    color: #f0f6fc;
+    background-color: #151b23;
+    padding: 5px 12px;
+    font-size: 12px;
+    height: 15px;
+}
+
+.input:focus, .upper-menu__input:focus{
+    outline: 2px solid #3086ff;
+    border: 1px solid #3086ff;
+}
+
+.suggest-text{
+    color:#f0f6fc;
+    font-size: 25px;
+}
+
+.get-info-button{
+    border-radius: 6px;
+    border: 1.5px solid #3d444d;
+    background-color: #212830;
+    color: #f0f6fc;
+    padding: 3px 8px;
+}
+
+.finding-repos-div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 25%; 
+    min-width: 300px; 
+    background-color: #151b23;
+    border: 2px solid #212830;
+    border-left: none;
+    padding-left: 15px;
+    gap: 10px;
+}
+
+.input-and-button-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.other{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 500px;
+    padding-bottom: 40%;
+}
+
+.owners-and-repos-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.owners-container, .repos-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.top-owners-text, .top-repos-text{
+    color: #f0f6fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin: 0px;
+}
+
+.top-owners, .top-repos{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;    
+    margin-left: 15px;
+}
+
+.owner-link, .repo-link{
+    display: flex;
+    text-decoration: none;
+    color: #f0f6fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    align-self: center;
+    flex-grow: 1;
+}
+
+.owner-profile-icon:hover, .repo-icon:hover{
+    background-color: #292a2b;
+    padding-left: 4px;
+    border-radius: 6px;
+}
+
+.owner-profile-icon, .repo-icon{
+    flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-left: 15px;
+    padding-left: 5px;
+    border-left: 2px solid #3c3d3e;
+}
+
+.owner-profile-avatar, .repo-owner-profile-avatar{
+    border-radius: 50%;
+    width: 30px;
+}
+
+.upper-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
+    gap: 12px;
+    height: 80px;
+    padding: 0px 15px;
+    border-bottom: 2px solid #3d444d;
+}
+
+.burger-menu{
+    outline: 2px solid #3f4144;
+    border-radius: 15%;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    padding-inline: 0px;
+    padding-block: 0px;
+    background-image: url(burger-icon.png);
+    background-size: 100% 100%;
+}
+
+.upper-menu__github-icon{
+    border-radius: 50%;
+    width: 40px;
+}
+
+.upper-menu__input{
+    height: 15px;
+    width: 14%;
+    min-width: 35px;
+    border: 1px solid #3d444d;
+    border-radius: 6px; 
+    color: #f0f6fc;
+    background-color: #151b23;
+    padding: 5px 12px;
+    font-size: 12px;
+}
+
+.not-found-message{
+    margin-top: 10%;
+    color: white;
+    flex-grow: 1;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}

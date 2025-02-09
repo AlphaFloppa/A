@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href = "style.css" rel = "stylesheet"/>
+</head>
+<body class = "body">
+    <div class = "upper-menu">
+        <button class = "burger-menu"></button>
+        <a href = "https://github.com" style = "text-decoration: none;">
+            <img src = "github.png" alt = "try ctrl-r" class = "upper-menu__github-icon"/>
+        </a>
+        <input type = "text" id = "upper-menu__input" placeholder="Search" class = "upper-menu__input"/>
+    </div>
+    <div class = "main-content" id = "main-content">
+        <div class = "finding-repos-div">
+            <h1 class = "suggest-text">Enter username</h1>
+            <div class = "input-and-button-container">
+                <input id = "repos-name-input" type = "text" class = "input" placeholder="Find user repositories" required/>
+                <button id = "get-info-button" class = "get-info-button">Get repos info</button>
+            </div>
+            <div class = "other">
+                <div class = "owners-and-repos-container">
+                    <div class = "owners-container">
+                        <div class = "top-owners">
+                            <h3 class = "top-owners-text">Top Owners</h3>
+                            <div class = "owner-profile-icon">
+                                <img src = "Exevald.png" alt = "try ctrl-r" class = "owner-profile-avatar"/>
+                                <a href = "https://github.com/Exevald" class = "owner-link">Exevald</a>
+                            </div>
+                            <div class = "owner-profile-icon">
+                                <img src = "Spider-has.png" alt = "try ctrl-r" class = "owner-profile-avatar"/>
+                                <a href = "https://github.com/Spider-has" class = "owner-link">Spider-has</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "repos-container">
+                        <div class = "top-repos">
+                            <h3 class = "top-repos-text">Top Repositories</h3>
+                            <div class = "repo-icon">
+                                <img src = "i.webp" alt = "try ctrl-r" class = "repo-owner-profile-avatar"/>
+                                <a href = "https://github.com/microsoft/vscode" class = "repo-link">vscode</a>
+                            </div>
+                            <div class = "repo-icon">
+                                <img src = "Exevald.png" alt = "try ctrl-r" class = "repo-owner-profile-avatar"/>
+                                <a href = "https://github.com/Exevald/web-course" class = "repo-link">web-course</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script src="api.js"></script>
+</body>
+</html>
