@@ -202,7 +202,7 @@
 }
 
 .acsess-type{
-    border-radius: 40%;
+    border-radius: 45%;
     border: 1px solid #3c3d3e;
     padding: 0px 8px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -215,19 +215,23 @@
     font-size: 14px;
 }
 
-.two-repos-container{
+.three-repos-container{
     display: flex;
     flex-flow: row nowrap;
-    gap: 50px;
+    align-items: baseline;
+    justify-content: start;
+    gap: 35px;
+    width: 100%;
 }
 
 .repo-info-container{
     display: flex;
     flex-flow: column nowrap;
-    gap: 15px;
+    gap: 7px;
     border: 1px solid #3c3d3e;
     border-radius: 5px;
     min-width: 350px;
+    max-width: 30%;
     padding: 10px 20px;
 }
 
@@ -235,6 +239,7 @@
     display: flex;
     flex-flow: row nowrap;
     gap: 5px;
+    margin: 8px 0;
 }
 
 .heading-name{

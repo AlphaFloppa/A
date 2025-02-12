@@ -10,17 +10,28 @@ async function GetReposList(){
 async function ShowInfo(){
     let repos_array = await GetReposList();
     let repos_list = document.getElementById("repos-list");
+    repos_list.innerHTML = "";
     if(repos_array.length <= 0){
         repos_list.innerHTML = "Repositories not found";
         repos_list.classList.add("not-found-message");
     }
     else{
-        for(let i = 0; i < repos_array.length; i += 2){
-            let two_repos_conteiner = document.createElement("div");
-            two_repos_conteiner.className = "two-repos-container";
-            two_repos_conteiner.append(CreateRepoInfoContainer(repos_array[i]));
-            two_repos_conteiner.append(CreateRepoInfoContainer(repos_array[i + 1]));
-            repos_list.append(two_repos_conteiner);
+        for(let i = 0; i < repos_array.length; i += 3){
+            let three_repos_container = document.createElement("div");
+            three_repos_container.className = "three-repos-container";
+            if(repos_array.length - i >= 3){
+                three_repos_container.append(CreateRepoInfoContainer(repos_array[i]));
+                three_repos_container.append(CreateRepoInfoContainer(repos_array[i + 1]));
+                three_repos_container.append(CreateRepoInfoContainer(repos_array[i + 2]));
+            }
+            else if (repos_array.length - i === 2){
+                three_repos_container.append(CreateRepoInfoContainer(repos_array[i]));
+                three_repos_container.append(CreateRepoInfoContainer(repos_array[i + 1]));
+            }
+            else if (repos_array.length - i === 1){
+                three_repos_container.append(CreateRepoInfoContainer(repos_array[i]));
+            }
+            repos_list.append(three_repos_container);
             console.log(repos_array[i]);
         }
 
@@ -62,10 +73,12 @@ function CreateRepoInfoContainer(repo_object){
             let creation_time = document.createElement("div");
             creation_time.className = "creation-time";
             creation_time.innerHTML = "Created at " + DefineCreationTime(repo_object);
+            creation_time.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
             repo.append(creation_time);
             let updation_time = document.createElement("div");
             updation_time.className = "updation-time";
             updation_time.innerHTML = "Updated on " + DefineUpdationTime(repo_object);
+            updation_time.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
             repo.append(updation_time);
             return repo;
 }
