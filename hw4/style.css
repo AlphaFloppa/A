@@ -1,11 +1,13 @@
 .body{
     background-color: #040507;
     margin: 0px;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .main-content{
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap; 
 }
 
 .suggest-text{
@@ -20,6 +22,7 @@
     padding: 5px 12px;
     font-size: 12px;
     height: 15px;
+    max-width: 150px;
 }
 
 .input:focus, .upper-menu__input:focus{
@@ -38,24 +41,26 @@
     background-color: #212830;
     color: #f0f6fc;
     padding: 3px 8px;
+    flex-shrink: 0;
 }
 
 .finding-repos-div{
     display: flex;
     flex-direction: column;
-    height: 100%;
-    min-width: 300px; 
+    flex-grow: 1;
+    max-width: 300px; 
+    min-width:  180px;
     background-color: #151b23;
     border: 2px solid #212830;
     border-left: none;
     border-top: none;
-    padding-left: 15px;
+    padding-left: 10px;
     gap: 10px;
 }
 
 .input-and-button-container{
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     gap: 10px;
 }
 
@@ -126,9 +131,10 @@
 
 .upper-menu{
     display: flex;
-    flex-direction: row;
-    justify-content: baseline;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
     align-items: center;
+    flex-grow: 1;
     gap: 12px;
     height: 80px;
     padding: 0px 15px;
@@ -136,10 +142,10 @@
 }
 
 .burger-menu{
-    outline: 2px solid #3f4144;
+    outline: 1px solid #3f4144;
     border-radius: 15%;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     padding: 0px;
     padding-inline: 0px;
     padding-block: 0px;
@@ -149,19 +155,41 @@
 
 .upper-menu__github-icon{
     border-radius: 50%;
-    width: 40px;
+    width: 45px;
 }
 
 .upper-menu__input{
-    height: 15px;
-    width: 14%;
-    min-width: 35px;
+    justify-self: end;
+    margin-left: 50%;
+    height: 17px;
+    width: 25%;
+    min-width: 50px;
     border: 1px solid #3d444d;
     border-radius: 6px; 
     color: #f0f6fc;
     background-color: #151b23;
     padding: 5px 12px;
     font-size: 12px;
+}
+
+.upper-menu__just-button1{
+    outline: 1px solid #3d444d;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    margin-left: 9%;
+    background-image: url(button1.jpg); 
+    background-size: 100% 100%;
+}
+
+.upper-menu__just-button2{
+    outline: 1px solid #3d444d;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    margin-left: 10px;
+    background-image: url(button2.webp); 
+    background-size: 100% 100%;
 }
 
 .repos-list{
@@ -171,7 +199,7 @@
     justify-content: start;
     align-items: center;
     gap: 25px;
-    margin: 20px 50px 20px 20px;
+    margin: 20px 0;
 }
 
 .not-found-message{
@@ -201,7 +229,9 @@
 }
 
 .acsess-type{
-    border-radius: 40%;
+    justify-self: flex-end;
+    margin-right: 5px;
+    border-radius: 45%;
     border: 1px solid #3c3d3e;
     padding: 0px 8px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -214,16 +244,13 @@
     font-size: 14px;
 }
 
-.two-repos-container{
+.three-repos-container{
     display: flex;
     flex-flow: row nowrap;
-<<<<<<< HEAD
-    align-items: baseline;
     justify-content: start;
-    gap: 25px;
-=======
-    gap: 50px;
->>>>>>> parent of c31ff1b (improvements)
+    gap: 20px;
+    width: 100%;
+    margin: 0 20px;
 }
 
 .repo-info-container{
@@ -232,13 +259,9 @@
     gap: 15px;
     border: 1px solid #3c3d3e;
     border-radius: 5px;
-<<<<<<< HEAD
-    width: 25%;
-    min-width: 325px;
-=======
-    min-width: 350px;
->>>>>>> parent of c31ff1b (improvements)
     padding: 10px 20px;
+    min-width: 310px;
+    width: 22%;
 }
 
 .lang-icon-and-name{
@@ -253,6 +276,8 @@
     color: #4493f8;
     font-weight: 600;
     font-size: 18px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .creation-time{
@@ -263,4 +288,12 @@
 .updation-time{
     font-size: 12px;
     color: #f0f6fc;
+}
+
+.theme-swap{
+    background-image: url(solar.png);
+    background-size: 100% 100%;
+    height: 30px;
+    width: 30px;
+    border: none
 }

@@ -5,17 +5,20 @@
     <title>Document</title>
     <link href = "style.css" rel = "stylesheet"/>
 </head>
-<body class = "body">
+<body class = "body" id = "body">
     <div class = "upper-menu">
-        <button class = "burger-menu"></button>
+        <button class = "burger-menu" id = "burger-button"></button>
         <a href = "https://github.com" style = "text-decoration: none;">
             <img src = "github.png" alt = "try ctrl-r" class = "upper-menu__github-icon"/>
         </a>
         <input type = "text" id = "upper-menu__input" placeholder="Search" class = "upper-menu__input"/>
+        <button class = "theme-swap" id = "theme-swap"></button>
+        <button class = "upper-menu__just-button1" id = "upper-menu__just-button1"></button>
+        <button class = "upper-menu__just-button2" id = "upper-menu__just-button2"></button>
     </div>
     <div class = "main-content" id = "main-content">
         <div class = "finding-repos-div">
-            <h1 class = "suggest-text">Enter username</h1>
+            <h1 class = "suggest-text">Enter username <br> here</h1>
             <div class = "input-and-button-container">
                 <input id = "repos-name-input" type = "text" class = "input" placeholder="Find user repositories" required/>
                 <button id = "get-info-button" class = "get-info-button">Get repos info</button>
