@@ -134,7 +134,7 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    flex-grow: 1;
+    width: 100%;
     gap: 12px;
     height: 80px;
     padding: 0px 15px;
@@ -144,8 +144,8 @@
 .burger-menu{
     outline: 1px solid #3f4144;
     border-radius: 15%;
-    width: 35px;
-    height: 35px;
+    min-width: 35px;
+    min-height: 35px;
     padding: 0px;
     padding-inline: 0px;
     padding-block: 0px;
@@ -163,7 +163,7 @@
     margin-left: 50%;
     height: 17px;
     width: 25%;
-    min-width: 50px;
+    min-width: 350px;
     border: 1px solid #3d444d;
     border-radius: 6px; 
     color: #f0f6fc;
@@ -176,7 +176,7 @@
     outline: 1px solid #3d444d;
     border-radius: 50%;
     height: 35px;
-    width: 35px;
+    min-width: 35px;
     margin-left: 9%;
     background-image: url(button1.jpg); 
     background-size: 100% 100%;
@@ -186,10 +186,17 @@
     outline: 1px solid #3d444d;
     border-radius: 50%;
     height: 35px;
-    width: 35px;
+    min-width: 35px;
     margin-left: 10px;
     background-image: url(button2.webp); 
     background-size: 100% 100%;
+}
+
+.theme-swap{
+    background-size: 100% 100%;
+    height: 30px;
+    min-width: 30px;
+    border: none;
 }
 
 .repos-list{
@@ -288,12 +295,4 @@
 .updation-time{
     font-size: 12px;
     color: #f0f6fc;
-}
-
-.theme-swap{
-    background-image: url(solar.png);
-    background-size: 100% 100%;
-    height: 30px;
-    width: 30px;
-    border: none
 }

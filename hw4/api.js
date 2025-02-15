@@ -2,7 +2,7 @@ let button = document.getElementById("get-info-button");
 let input = document.getElementById("repos-name-input");
 let theme_swap_button = document.getElementById("theme-swap");
 let body = document.getElementById("body");
-theme_swap_button.addEventListener("mousedown", InvertingTechnique);
+theme_swap_button.addEventListener("mousedown", InvertingTechnique);                             //смена темы
 button.addEventListener("mousedown", ShowInfo);
 let justButton1 = document.getElementById("upper-menu__just-button1");
 justButton1.addEventListener("mousedown", () => alert("это кнопка"));
@@ -157,13 +157,12 @@ function PutBRS(string){
 }
 
 function InvertingTechnique(){
-    if(theme_swap_button.style.backgroundImage == "solar.png"){
-        theme_swap_button.style.backgroundImage = "url(lunar.png)";
+    if(theme_swap_button.style.backgroundImage == "url(\"solar.png\")"){
+        theme_swap_button.style.backgroundImage = "url(\"lunar.png\")";
         body.style.backgroundColor = "#f7f7f7";
     }
-    else {
-        theme_swap_button.style.backgroundImage = "url(solar.png)";
+    else if(theme_swap_button.style.backgroundImage == "url(\"lunar.png\")"){
+        theme_swap_button.style.backgroundImage = "url(\"solar.png\")";
         body.style.backgroundColor = "#040507";
-        alert("poshel nahui");
     }
 }
