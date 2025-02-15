@@ -1,7 +1,17 @@
 let button = document.getElementById("get-info-button");
 let input = document.getElementById("repos-name-input");
+let upper_menu_input = document.getElementById("upper-menu__input");
 let theme_swap_button = document.getElementById("theme-swap");
+let finding_repos_div = document.getElementById("finding-repos-div");
 let body = document.getElementById("body");
+let suggest_text = document.getElementById("suggest-text");
+let repos_name_input = document.getElementById("repos-name-input");
+let owner_link = document.getElementById("owner-link");
+let repo_link = document.getElementById("repo-link");
+let owner_link1 = document.getElementById("owner-link1");
+let repo_link1 = document.getElementById("repo-link1");
+let top_owners_text = document.getElementById("top-owners-text");
+let top_repos_text = document.getElementById("top-repos-text");
 theme_swap_button.addEventListener("mousedown", InvertingTechnique);                             //смена темы
 button.addEventListener("mousedown", ShowInfo);
 let justButton1 = document.getElementById("upper-menu__just-button1");
@@ -160,9 +170,29 @@ function InvertingTechnique(){
     if(theme_swap_button.style.backgroundImage == "url(\"solar.png\")"){
         theme_swap_button.style.backgroundImage = "url(\"lunar.png\")";
         body.style.backgroundColor = "#f7f7f7";
+        upper_menu_input.style.backgroundColor = "#f7f7f7";
+        finding_repos_div.style.backgroundColor = "#f7f7f7";
+        suggest_text.style.color = "#040507";
+        repos_name_input.style.backgroundColor = "#f7f7f7";
+        owner_link.style.color = "#040507";
+        repo_link.style.color = "#040507";
+        owner_link1.style.color = "#040507";
+        repo_link1.style.color = "#040507";
+        top_owners_text.style.color = "#040507";
+        top_repos_text.style.color = "#040507";
     }
     else if(theme_swap_button.style.backgroundImage == "url(\"lunar.png\")"){
         theme_swap_button.style.backgroundImage = "url(\"solar.png\")";
         body.style.backgroundColor = "#040507";
+        upper_menu_input.style.backgroundColor = "#040507";
+        finding_repos_div.style.backgroundColor = "#151b23";
+        suggest_text.style.color = "#f7f7f7";
+        repos_name_input.style.backgroundColor = "#151b23";
+        owner_link.style.color = "#f7f7f7";
+        repo_link.style.color = "#f7f7f7";
+        owner_link1.style.color = "#f7f7f7";
+        repo_link1.style.color = "#f7f7f7";
+        top_owners_text.style.color = "#f7f7f7";
+        top_repos_text.style.color = "#f7f7f7";
     }
 }

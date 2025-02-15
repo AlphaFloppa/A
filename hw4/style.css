@@ -135,6 +135,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    flex-grow: 1;
     gap: 12px;
     height: 80px;
     padding: 0px 15px;
