@@ -12,14 +12,17 @@ let owner_link1 = document.getElementById("owner-link1");
 let repo_link1 = document.getElementById("repo-link1");
 let top_owners_text = document.getElementById("top-owners-text");
 let top_repos_text = document.getElementById("top-repos-text");
-theme_swap_button.addEventListener("mousedown", InvertingTechnique);                             //смена темы
+let button1 = document.getElementById("upper-menu__just-button1");
+let button2 = document.getElementById("upper-menu__just-button2");
+let get_info_button = document.getElementById("get-info-button");
+theme_swap_button.addEventListener("mousedown", InvertionTechnique_Red);                             //смена темы
 button.addEventListener("mousedown", ShowInfo);
-let justButton1 = document.getElementById("upper-menu__just-button1");
-justButton1.addEventListener("mousedown", () => alert("это кнопка"));
-let justButton2 = document.getElementById("upper-menu__just-button2");
-justButton2.addEventListener("mousedown", () => alert("это тоже кнопка"));
-let burgerButton = document.getElementById("burger-button");
-burgerButton.addEventListener("mousedown", () => alert("TODO"));
+let just_button1 = document.getElementById("upper-menu__just-button1");
+just_button1.addEventListener("mousedown", () => alert("это кнопка"));
+let just_button2 = document.getElementById("upper-menu__just-button2");
+just_button2.addEventListener("mousedown", () => alert("это тоже кнопка"));
+let burger_button = document.getElementById("burger-button");
+burger_button.addEventListener("mousedown", () => alert("TODO"));
 async function GetReposList(){
     let responce = await fetch("https://api.github.com/users/" + input.value + "/repos", {method: "GET"});
     let a = await responce.json(); 
@@ -166,7 +169,11 @@ function PutBRS(string){
     return string;
 }
 
-function InvertingTechnique(){
+function InvertionTechnique_Red(){
+    let lang_names = document.getElementsByClassName("repo-info__lang-name");
+    let times_of_creation = document.getElementsByClassName("creation-time");
+    let times_of_updating = document.getElementsByClassName("updation-time");
+    console.log(typeof(lang_names) + " " + lang_names.length);
     if(theme_swap_button.style.backgroundImage == "url(\"solar.png\")"){
         theme_swap_button.style.backgroundImage = "url(\"lunar.png\")";
         body.style.backgroundColor = "#f7f7f7";
@@ -180,6 +187,16 @@ function InvertingTechnique(){
         repo_link1.style.color = "#040507";
         top_owners_text.style.color = "#040507";
         top_repos_text.style.color = "#040507";
+        button1.style.backgroundImage = "url(\"button1_inverted.jpg\")";
+        button2.style.backgroundImage = "url(\"button2_inverted.webp\")";
+        get_info_button.style.backgroundColor = "#f0f6fc";
+        get_info_button.style.color = "#040507";
+        burger_button.style.backgroundImage = "url(\"burger-icon_inverted.png\")";
+        for(let i = 0; i < lang_names.length; i++){
+            lang_names[i].style.color = "#040507";
+            times_of_creation[i].style.color = "#040507";
+            times_of_updating[i].style.color = "#040507";
+        }
     }
     else if(theme_swap_button.style.backgroundImage == "url(\"lunar.png\")"){
         theme_swap_button.style.backgroundImage = "url(\"solar.png\")";
@@ -194,5 +211,15 @@ function InvertingTechnique(){
         repo_link1.style.color = "#f7f7f7";
         top_owners_text.style.color = "#f7f7f7";
         top_repos_text.style.color = "#f7f7f7";
+        button1.style.backgroundImage = "url(\"button1.jpg\")";
+        button2.style.backgroundImage = "url(\"button2.webp\")";
+        get_info_button.style.backgroundColor = "#212830";
+        get_info_button.style.color = "#f0f6fc";
+        burger_button.style.backgroundImage = "url(\"burger-icon.png\")";
+        for(let i = 0; i < lang_names.length; i++){
+            lang_names[i].style.color = "#f7f7f7";
+            times_of_creation[i].style.color = "#f7f7f7";
+            times_of_updating[i].style.color = "#f7f7f7";
+        }
     }
 }

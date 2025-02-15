@@ -145,8 +145,8 @@
 .burger-menu{
     outline: 1px solid #3f4144;
     border-radius: 15%;
-    min-width: 35px;
-    min-height: 35px;
+    width: 40px;
+    height: 40px;
     padding: 0px;
     padding-inline: 0px;
     padding-block: 0px;
@@ -178,7 +178,7 @@
     border-radius: 50%;
     height: 35px;
     min-width: 35px;
-    margin-left: 9%;
+    margin-left: 60px;
     background-image: url(button1.jpg); 
     background-size: 100% 100%;
 }
@@ -195,9 +195,10 @@
 
 .theme-swap{
     background-size: 100% 100%;
-    height: 30px;
-    min-width: 30px;
+    height: 40px;
+    min-width: 40px;
     border: none;
+    margin-left: 20px;
 }
 
 .repos-list{
@@ -269,7 +270,7 @@
     border-radius: 5px;
     padding: 10px 20px;
     min-width: 310px;
-    width: 22%;
+    width: 25%;
 }
 
 .lang-icon-and-name{
