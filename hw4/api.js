@@ -15,7 +15,7 @@ let top_repos_text = document.getElementById("top-repos-text");
 let button1 = document.getElementById("upper-menu__just-button1");
 let button2 = document.getElementById("upper-menu__just-button2");
 let get_info_button = document.getElementById("get-info-button");
-theme_swap_button.addEventListener("mousedown", InvertionTechnique_Red);                             //смена темы
+theme_swap_button.addEventListener("mousedown", InvertionTechnique_Red);               
 button.addEventListener("mousedown", ShowInfo);
 let just_button1 = document.getElementById("upper-menu__just-button1");
 just_button1.addEventListener("mousedown", () => alert("это кнопка"));
@@ -23,19 +23,42 @@ let just_button2 = document.getElementById("upper-menu__just-button2");
 just_button2.addEventListener("mousedown", () => alert("это тоже кнопка"));
 let burger_button = document.getElementById("burger-button");
 burger_button.addEventListener("mousedown", () => alert("TODO"));
-async function GetReposList(){
+async function GetReposList(){                    // получить данные и выдать ошибку в случае чего
     let responce = await fetch("https://api.github.com/users/" + input.value + "/repos", {method: "GET"});
-    let a = await responce.json(); 
+    console.log(responce);
+    if(responce.status >= 400){
+        let repos_list = document.getElementById("repos-list");
+        if(responce.status = 404){
+            repos_list.innerHTML = "User not found";
+        }
+        else{
+            repos_list.innerHTML = "Something goes wrong<br>" + responce.status + " " + responce.statusText;  
+        }
+        repos_list.className = "not-found-message";
+        if(theme_swap_button.style.backgroundImage === "url(\"lunar.png\")"){
+            repos_list.style.color = "#040507";
+        }
+        return false;
+    }
+    let a = await responce.json();
     return a;
 }
 
-async function ShowInfo(){
+async function ShowInfo(){                                    // сделать контейнеры по 3 в ряд
     let repos_array = await GetReposList();
+    if(repos_array == false || repos_array == undefined){
+        return;
+    }
     let repos_list = document.getElementById("repos-list");
     repos_list.innerHTML = "";
-    if(repos_array.length <= 0){
+    repos_list.className = "repos-list";
+    if(repos_array.length === 0){
         repos_list.innerHTML = "Repositories not found";
-        repos_list.classList.add("not-found-message");
+        repos_list.className = "not-found-message";
+        if(theme_swap_button.style.backgroundImage === "url(\"lunar.png\")"){
+            repos_list.style.color = "#040507";
+        }
+        return;
     }
     else{
         for(let i = 0; i < repos_array.length; i += 3){
@@ -58,7 +81,7 @@ async function ShowInfo(){
         }
    }
 }
-function CreateRepoInfoContainer(repo_object){
+function CreateRepoInfoContainer(repo_object){                                      // наполнить контейнеры информацией
             let repo = document.createElement("div");
             repo.className = "repo-info-container";
             let heading = document.createElement("div");
@@ -72,9 +95,6 @@ function CreateRepoInfoContainer(repo_object){
             repo_object.private
                 ? acsess_type.innerHTML = "Private"
                 : acsess_type.innerHTML = "Public"
-            heading.append(heading_name);
-            heading.append(acsess_type);
-            repo.append(heading);
             let lang_icon_and_name = document.createElement("div");
             lang_icon_and_name.className = "lang-icon-and-name";
             let circle = document.createElement("div");
@@ -89,20 +109,28 @@ function CreateRepoInfoContainer(repo_object){
                     lang_name.innerHTML = "This repository is empty";
             }
             lang_name.className = "repo-info__lang-name";
-            lang_icon_and_name.append(lang_name);
-            repo.append(lang_icon_and_name);
             let creation_time = document.createElement("div");
             creation_time.className = "creation-time";
             creation_time.innerHTML = "Created at " + DefineCreationTime(repo_object);
-            repo.append(creation_time);
             let updation_time = document.createElement("div");
             updation_time.className = "updation-time";
             updation_time.innerHTML = "Updated on " + DefineUpdationTime(repo_object);
+            heading.append(heading_name);
+            heading.append(acsess_type);
+            repo.append(heading);
+            if(theme_swap_button.style.backgroundImage === "url(\"lunar.png\")"){
+                creation_time.style.color = "#040507";
+                updation_time.style.color = "#040507";
+                lang_name.style.color = "#040507";
+            }
+            lang_icon_and_name.append(lang_name);
+            repo.append(lang_icon_and_name);
+            repo.append(creation_time);
             repo.append(updation_time);
             return repo;
 }
 
-function DefineLangIconColor(repo_object){
+function DefineLangIconColor(repo_object){                     // определить цвет для иконки языка , взято с гитхаба
     switch(repo_object.language){
         case "JavaScript":
             return "#f1e05a";
@@ -111,7 +139,7 @@ function DefineLangIconColor(repo_object){
         case "Python":
             return "#3572A5";
         case "PHP":            
-            return "#4F5D95 ";
+            return "#4F5D95";
        case "Ruby":
             return "#701516";
         case "Shell":
@@ -148,7 +176,7 @@ function DefineLangIconColor(repo_object){
             return "#814CCC";
     }
 }
-function DefineCreationTime(repo_object){
+function DefineCreationTime(repo_object){                                  // получить дату в нужном формате
     let a = new Date(repo_object.created_at.substring(0, repo_object.created_at.indexOf("T")));
     let array_of_months = ["January", "February", "March", "April", "May", "June",
          "Jule", "August", "September", "October", "November", "December"];
@@ -160,8 +188,8 @@ function DefineUpdationTime(repo_object){
          "Jule", "August", "September", "October", "November", "December"];
     return array_of_months[a.getMonth()] + " " + a.getDate() + ", " + a.getFullYear(); 
 }
-function PutBRS(string){
-    for(var i = 1; i < string.length; i++){
+function PutBRS(string){                   // засунуть <br> в имя репозитроия через каждые 20 символов 
+    for(var i = 1; i < string.length; i++){                    // (а вдруг он слишком длинный и не вместиться)
         if(i % 20 === 0){
             string = string.slice(0, i) + "<br>" + string.slice(i);
         }
@@ -169,13 +197,16 @@ function PutBRS(string){
     return string;
 }
 
-function InvertionTechnique_Red(){
+function InvertionTechnique_Red(){                                                       // смена темы  (просто меняются цвета)
     let lang_names = document.getElementsByClassName("repo-info__lang-name");
     let times_of_creation = document.getElementsByClassName("creation-time");
     let times_of_updating = document.getElementsByClassName("updation-time");
-    console.log(typeof(lang_names) + " " + lang_names.length);
     if(theme_swap_button.style.backgroundImage == "url(\"solar.png\")"){
         theme_swap_button.style.backgroundImage = "url(\"lunar.png\")";
+        theme_swap_button.style.border = "2px solid #040507";
+        if(document.getElementsByClassName("not-found-message").length != 0){
+            document.getElementsByClassName("not-found-message")[0].style.color = "#040507";
+        }
         body.style.backgroundColor = "#f7f7f7";
         upper_menu_input.style.backgroundColor = "#f7f7f7";
         finding_repos_div.style.backgroundColor = "#f7f7f7";
@@ -201,6 +232,10 @@ function InvertionTechnique_Red(){
     }
     else if(theme_swap_button.style.backgroundImage == "url(\"lunar.png\")"){
         theme_swap_button.style.backgroundImage = "url(\"solar.png\")";
+        theme_swap_button.style.border = "2px solid #f0f6fc";
+        if(document.getElementsByClassName("not-found-message").length != 0){
+            document.getElementsByClassName("not-found-message")[0].style.color = "#f0f6fc";
+        }
         body.style.backgroundColor = "#040507";
         upper_menu_input.style.backgroundColor = "#040507";
         finding_repos_div.style.backgroundColor = "#151b23";

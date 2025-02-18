@@ -51,9 +51,7 @@
     max-width: 300px; 
     min-width:  180px;
     background-color: #151b23;
-    border: 2px solid #212830;
-    border-left: none;
-    border-top: none;
+    border-right: 2px solid #212830;
     padding-left: 10px;
     gap: 10px;
 }
@@ -162,7 +160,7 @@
 
 .upper-menu__input{
     justify-self: end;
-    margin-left: 50%;
+    margin-left: 48%;
     height: 17px;
     width: 25%;
     min-width: 350px;
@@ -198,7 +196,7 @@
     background-size: 100% 100%;
     height: 40px;
     min-width: 40px;
-    border: none;
+    border: 2px solid #f0f6fc;
     margin-left: 20px;
 }
 
