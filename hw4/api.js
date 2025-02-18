@@ -181,6 +181,7 @@ function InvertionTechnique_Red(){
         finding_repos_div.style.backgroundColor = "#f7f7f7";
         suggest_text.style.color = "#040507";
         repos_name_input.style.backgroundColor = "#f7f7f7";
+        repos_name_input.style.color = "#040507";
         owner_link.style.color = "#040507";
         repo_link.style.color = "#040507";
         owner_link1.style.color = "#040507";
@@ -205,6 +206,7 @@ function InvertionTechnique_Red(){
         finding_repos_div.style.backgroundColor = "#151b23";
         suggest_text.style.color = "#f7f7f7";
         repos_name_input.style.backgroundColor = "#151b23";
+        repos_name_input.style.color = "#f0f6fc";
         owner_link.style.color = "#f7f7f7";
         repo_link.style.color = "#f7f7f7";
         owner_link1.style.color = "#f7f7f7";
