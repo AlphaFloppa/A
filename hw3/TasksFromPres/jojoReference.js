@@ -11,10 +11,13 @@ function OnClick(){
     count++;
     console.log("Вы кликнули " + count + " раз(a)");
     if(count % 5 === 0){
-        if(count % 10 === 0){
+        if(count % 2 === 0){
             elem.style.backgroundColor = "red";
             return;
         }
         elem.style.backgroundColor = "blue";
+    }
+    else{
+        elem.style.backgroundColor = "white";
     }
 }
