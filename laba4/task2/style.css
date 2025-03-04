@@ -1,56 +1,26 @@
-.body, .post{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: baseline;
+.grid-container{
+    display: grid;
+    grid-template: 
+        [height-start] 100px [header-end] 50px [main-content-start] 1fr [height-end]
+        [sidebar-start] 50px [sidebar-end] 1fr [main-content-start] 500px [main-content-end] 1fr [width-end];
+    grid-template-areas: 
+        "sidebar   header    header      header"
+        "sidebar      .        .           ."
+        "sidebar      .    main-content    .";   
+    place-items: stretch;
+
 }
 
-.body{
-    align-items: center;
+.sidebar{
+    grid-area: sidebar;
+    align-self: start;
 }
 
-
-.hat{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    gap: 25px;
-    margin-bottom: 10px;
-    flex-grow: 1;
+.header{
+    grid-area: header;
+    align-self: center;
 }
 
-.user-photo{
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-}
-
-.user-name{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
-}
-
-.edit-post-button{
-    width: 20px;
-    height: 20px;
-    border-radius: 20%;
-    background-image: url(cat.webp);
-    background-size: 20px 20px;
-    margin-left: 90%;
-}
-
-.post-img{
-    margin-bottom: 10px;
-}
-
-.like-button{
-    height: 20px;
-    width: 20px;
-    color: #e7505a;
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.post-date{
-    color: #9d9595f1;
+.main-content{
+    grid-area: main-content;
 }

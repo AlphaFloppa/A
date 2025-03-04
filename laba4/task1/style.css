@@ -90,6 +90,8 @@ html{
 
 .login-left-picture{
     height:70%;
+    min-height: 100px;
+    min-width: 90px;
     width: 55%;
 }
 
@@ -107,16 +109,18 @@ html{
 
 .left-part-container{
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: start;
 }
 
 .login-text{
     position: relative;
     left: 15%;
     z-index: 10;
-    transform: translateY(-32px);
+    transform: translateY(-60%) translateX(9%);
     text-align: start;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 50px;
+    font-size: 5lvw;
     font-weight: 550;
 }
