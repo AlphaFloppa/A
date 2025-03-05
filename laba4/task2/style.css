@@ -8,17 +8,15 @@
         "sidebar   header    header      header"
         "sidebar      .        .           ."
         "sidebar      .    main-content    .";   
-    place-items: stretch;
+    justify-items: stretch;
+    align-items: stretch;
 
 }
 
 .sidebar{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     grid-area: sidebar;
-    align-self: start;
     padding-top: 45px;
+    border-right: 1px solid rgba(34, 34, 34, 0.05);
 }
 
 .header{
@@ -45,4 +43,17 @@
     display: flex;
     align-items: start;
     justify-content: center;
+}
+
+.profile-button,
+.plus-button{
+    width: 24px;
+    height: 24px;
+    margin: 0px calc((100% - 24px) / 2) 20px;
+}
+
+.home-button{
+    width: 40px;
+    height: 40px;
+    margin: 0px calc((100% - 40px) / 2) 20px;
 }
