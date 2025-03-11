@@ -1,16 +1,22 @@
+:root{
+  --post-image-width: 474px;
+  --space-between-posts: 30px;
+}
+
 .grid-container{
     display: grid;
     grid-template: 
-        [height-start] 100px [header-end] 50px [main-content-start] 1fr [height-end]
+        [height-start] 50px [header-end] 50px [post1-start] 1fr [post1-end] var(--space-between-posts) [post2-start] 1fr [post2-end]
         /
-        [sidebar-start] 50px [sidebar-end] 1fr [main-content-start] 500px [main-content-end] 1fr [width-end];
+        [sidebar-start] 50px [sidebar-end] 1fr [main-content-start] var(--post-image-width) [main-content-end] 1fr [width-end];
     grid-template-areas: 
         "sidebar   header    header      header"
-        "sidebar      .        .           ."
-        "sidebar      .    main-content    .";   
+        "sidebar      .        .           .   "
+        "sidebar      .      post1         .   "
+        "sidebar      .        .           .   "
+        "sidebar      .      post2         .   ";   
     justify-items: stretch;
     align-items: stretch;
-
 }
 
 .sidebar{
@@ -33,27 +39,96 @@
     height: 20%;
     width: 5%;
     min-width: 150px;
+    padding-left: 5px;
 }
 
-.main-content{
-    grid-area: main-content;
+.post1{
+    grid-area: post1;
 }
 
-.post-imgs-gallery{
-    display: flex;
-    align-items: start;
-    justify-content: center;
+.post2{
+    grid-area: post2;                                                                                                                      
 }
 
 .profile-button,
 .plus-button{
     width: 24px;
     height: 24px;
-    margin: 0px calc((100% - 24px) / 2) 20px;
+    margin: 0px calc((100% - 24px) / 2) 10px;
 }
 
 .home-button{
     width: 40px;
     height: 40px;
-    margin: 0px calc((100% - 40px) / 2) 20px;
+    margin: 0px calc((100% - 40px) / 2) 10px;
+}
+
+.post-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px auto 10px;
+}
+
+.post-header__user-avatar{
+    vertical-align: middle;
+}
+
+.post-header__edit-button{
+    flex-shrink: 0;
+}
+
+.post-header__user-name, 
+.post-user-description,
+.post-short-user-description,
+.reveal-description-button,
+.post-time,
+.likes-count{
+    font-family: Golos Text;
+    font-weight: 500;
+    letter-spacing: -0.15px;
+    font-size: 14px;
+}
+
+.post-user-description, 
+.post-short-user-description,
+.reveal-description-button,
+.likes-count{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.reveal-description-button,
+.post-time{
+    opacity: 50%;
+}
+
+.reveal-description-button{
+    text-decoration: underline;
+    margin: 10px 0px;
+}
+
+.post-time{
+    font-size: 14px;
+}
+
+.likes-button{
+    margin: 15px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    border: 1px solid rgba(34, 34, 34, 0.05) ;
+    border-radius: 8px;
+    background-color: rgba(34, 34, 34, 0.05);
+    padding: 6px 12px 6px 12px;
+    transition: background-color 0.5s;    
+}
+
+.like-symbol{
+    color: red;
+}
+
+.post-user-description{
+    position: absolute;
+    visibility: hidden;
 }
