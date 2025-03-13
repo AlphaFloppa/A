@@ -1,8 +1,8 @@
 @font-face{
     font-family: "Golos UI";
     src: 
-        url("..\task2\golos-ui_medium.woff") format("woff"),
-        url("..\task2\golos-ui_medium.woff2") format("woff2");
+        url(golos-ui_medium.woff) format("woff"),
+        url(golos-ui_medium.woff2) format("woff2");
     font-weight: 400;
     font-style: normal;
 }
