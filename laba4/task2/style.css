@@ -1,3 +1,5 @@
+@import url("../fonts/fonts.css");
+
 :root{
   --post-image-width: 474px;
   --space-between-posts: 30px;
@@ -6,11 +8,11 @@
 .grid-container{
     display: grid;
     grid-template: 
-        [height-start] 50px [header-end] 50px [post1-start] 1fr [post1-end] var(--space-between-posts) [post2-start] 1fr [post2-end]
+        [height-start] 73px [header-end] 50px [post1-start] 1fr [post1-end] var(--space-between-posts) [post2-start] 1fr [post2-end]
         /
         [sidebar-start] 50px [sidebar-end] 1fr [main-content-start] var(--post-image-width) [main-content-end] 1fr [width-end];
     grid-template-areas: 
-        "sidebar   header    header      header"
+        "sidebar      .        .           .   "
         "sidebar      .        .           .   "
         "sidebar      .      post1         .   "
         "sidebar      .        .           .   "
@@ -25,23 +27,6 @@
     border-right: 1px solid rgba(34, 34, 34, 0.05);
 }
 
-.header{
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    grid-area: header;
-    align-self: center;
-}
-
-.search-input{
-    border-radius: 8px;
-    border: 1px solid #0b0c1c;
-    height: 20%;
-    width: 5%;
-    min-width: 150px;
-    padding-left: 5px;
-}
-
 .post1{
     grid-area: post1;
 }
@@ -51,16 +36,11 @@
 }
 
 .profile-button,
-.plus-button{
+.plus-button,
+.home-button{
     width: 24px;
     height: 24px;
     margin: 0px calc((100% - 24px) / 2) 10px;
-}
-
-.home-button{
-    width: 40px;
-    height: 40px;
-    margin: 0px calc((100% - 40px) / 2) 10px;
 }
 
 .post-header{
@@ -84,7 +64,7 @@
 .reveal-description-button,
 .post-time,
 .likes-count{
-    font-family: Golos Text;
+    font-family: Golos UI, sans-serif;
     font-weight: 500;
     letter-spacing: -0.15px;
     font-size: 14px;
@@ -95,7 +75,6 @@
 .reveal-description-button,
 .likes-count{
     font-size: 15px;
-    font-weight: 400;
 }
 
 .reveal-description-button,
