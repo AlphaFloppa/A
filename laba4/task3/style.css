@@ -1,0 +1,36 @@
+@import url("../fonts/fonts.css");
+
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    padding-top: 45px;
+    border: 1px solid rgba(34, 34, 34, 0.05);
+    gap: 10px;
+    width: 50px;
+}
+
+.profile-button,
+.plus-button,
+.home-button{
+    width: 24px;
+    height: 24px;
+    margin: 0px calc((100% - 24px) / 2);
+}
+
+.profile-button{
+    margin: 0px calc((100% - 24px) / 2) 2px;
+}
+
+.active-window-symbol{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: rgba(34, 34, 34, 1);
+}
