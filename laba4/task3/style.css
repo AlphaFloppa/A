@@ -34,3 +34,67 @@ body{
     margin: 0 auto;
     background-color: rgba(34, 34, 34, 1);
 }
+
+.main-content{
+    width: 70%;
+    margin: 73px 15% 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    gap: 20px;
+}
+
+.header{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    height: 25%;
+    gap: 10px;
+}
+
+.posts-container{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.post-img{
+    width: calc(100%/3);
+}
+
+.user-avatar{
+    width: 123px;
+}
+
+.user-name,
+.user-status{
+    font-family: Golos UI, sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -0.25px;
+    text-align: center;
+}
+
+.user-status{
+    font-weight: 400;
+    font-size: 15px;
+    width: 50%;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+}
+
+.posts-count-container{
+    padding: 6px 10px;
+    background-color: #F2F3F5;
+    border: 1px solid #F2F3F5;
+    border-radius: 6px;
+}
+
+.post-icon,
+.posts-count{
+    vertical-align: middle;
+    font-family: Golos UI, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
