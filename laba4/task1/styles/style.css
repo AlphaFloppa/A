@@ -43,12 +43,12 @@ body{
     border: 1px;
     border-radius: 10px;
     height: 44px;
-    width: 250px;
+    width: 343px;
     padding: 12px 13px;
 }
 
-.input:focus{
-   outline: 1px solid rgba(63, 138, 224, 1);
+.input:active{
+   outline: 1p x solid rgba(63, 138, 224, 1);
 }
 
 .text{
@@ -87,9 +87,10 @@ body{
     background-color: black;
     color: white;
     height: 35px;
-    width: 250px;
+    width: 343px;
     border-radius: 9px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .login-left-picture{
@@ -107,6 +108,7 @@ body{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    align-items: start;
     gap: 10px;
 }
 
@@ -130,4 +132,38 @@ body{
     line-height: 180px;
     letter-spacing: -1.5px;
     color: #222222;
+}
+
+.eye-icon{
+    position: absolute;
+    left: 306px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.password-input-container{
+    position: relative;
+    display: inline;
+}
+
+.warning-text-emoji{
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.warning-label-container{
+    order: -1;
+    padding: 12px;
+    border-radius: 10px;
+    width: 343px;
+    background-color: rgba(255, 236, 236, 1);
+}
+
+.warning-text{
+    color: rgba(116, 0, 0, 1);
+    font-family: Golos UI, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
 }

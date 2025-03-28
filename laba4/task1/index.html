@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset = "UTF-8"/>
         <!--<meta name = "viewport" content = "width=600, height=350, initial-scale=1"/>-->
-        <meta name="viewport" content="width=1220, initial-scale=1" />
+        <meta name="viewport" content="width=1220, initial-scale=1"/>
         <title>Login</title>
-        <link href="styles/style.css" rel="stylesheet" />
+        <link href="styles/style.css" rel="stylesheet"/>
     </head>
     <body>
         <div class="main-content">
@@ -18,19 +18,21 @@
                     <div class = "email-container">
                         <label class="input-suggest-text">
                             Электропочта<br/>
-                            <input type="text" name="login" class="input" required/>
+                            <input type="email" name="login" class="input" id = "input-email" required value = ""/>
                         </label>
                         <span class="text">Введите электропочту в формате *****@***.**</span>
                     </div>
-                    <label class="input-suggest-text">
-                        Пароль<br/>
-                        <input type="password" name="password" class="input" required/>
-                    </label>
+                    <label class="input-suggest-text" for = "input-password">Пароль</label>
+                    <div class = "password-input-container">
+                        <input type="password" name="password" class="input" id = "input-password" value = "" required/>
+                        <img src = "../static/eye-open-icon.png" alt = "Try Ctrl-R" class = "eye-icon">
+                    </div>
                     <a href="https://google.com">
-                        <input class="continue-button" type = "submit" value = "Продолжить"/>
+                        <input class="continue-button" type = "submit" id = "input-button-continue" value = "Продолжить"/>
                     </a>
                 </form>
             </div>
         </div>
+        <script src = "scripts/script.js"></script>
     </body>
 </html>
