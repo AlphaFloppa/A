@@ -1,0 +1,183 @@
+@import url("../../fonts/fonts.css");
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+  --post-image-width: 474px;
+  --space-between-posts: 30px;
+  --photo-order-width: 44px;
+  --photo-order-height: 24px;
+  --photo-order-right-margin: 18px;
+  --photo-order-top-margin : 20px;
+  --photo-switcher-width: 20px;
+  --photo-switcher-height: 20px;
+  --photo-switcher-right-margin: 3%;
+}
+
+.grid-container{
+    display: grid;
+    grid-template: 
+        [height-start] 73px [header-end] 50px [post1-start] 1fr [post1-end] var(--space-between-posts) [post2-start] 1fr [post2-end]
+        /
+        [sidebar-start] 50px [sidebar-end] 1fr [main-content-start] var(--post-image-width) [main-content-end] 1fr [width-end];
+    grid-template-areas: 
+        "sidebar      .        .           .   "
+        "sidebar      .        .           .   "
+        "sidebar      .      post1         .   "
+        "sidebar      .        .           .   "
+        "sidebar      .      post2         .   ";   
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    padding-top: 45px;
+    border-right: 1px solid rgba(34, 34, 34, 0.05);
+}
+
+.post1{
+    grid-area: post1;
+}
+
+.post2{
+    grid-area: post2;                                                                                                                      
+}
+
+.profile-button,
+.plus-button,
+.home-button{
+    width: 24px;
+    height: 24px;
+    margin: 0px calc((100% - 24px) / 2) 10px;
+}
+
+.home-button{
+    margin: 0px calc((100% - 24px) / 2) 2px;
+}
+
+.post-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px auto 10px;
+}
+
+.post-header__user-avatar{
+    vertical-align: middle;
+}
+
+.post-header__edit-button{
+    flex-shrink: 0;
+}
+
+.post-header__user-name, 
+.post-user-description,
+.reveal-description-button,
+.post-time,
+.likes-count{
+    font-family: Golos UI, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.15px;
+    font-size: 14px;
+}
+
+.post-user-description, 
+.reveal-description-button,
+.likes-count{
+    font-size: 15px;
+}
+
+.reveal-description-button,
+.post-time{
+    opacity: 50%;
+}
+
+.reveal-description-button{
+    text-decoration: underline;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.post-time{
+    font-size: 14px;
+}
+
+.likes-button{
+    margin: 15px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    border: 1px solid rgba(34, 34, 34, 0.05) ;
+    border-radius: 8px;
+    background-color: rgba(34, 34, 34, 0.05);
+    padding: 6px 12px 6px 12px;
+    transition: background-color 0.5s;    
+    cursor: pointer;
+}
+
+.like-symbol{
+    color: red;
+}
+
+.post-user-description.short{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+.active-window-symbol{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    background-color: rgba(34, 34, 34, 1);
+}
+
+.description{
+    margin-bottom: 8px;
+}
+
+.container,
+.reveal-description-button,
+.likes-button{
+    cursor: pointer;
+}
+
+.post-photos-gallery{
+    position: relative;
+}
+
+.post-number{
+    background-color: rgba(34, 34, 34, 0.5);
+    border-radius: 20px;
+    padding: 0px 10px;
+    color: white;
+    font-family: Golos UI;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    text-align: center;
+    position: absolute;
+    left: calc(100% - var(--photo-order-right-margin) - var(--photo-order-width));
+    top: var(--photo-order-top-margin);
+    width: var(--photo-order-width);
+    height: var(--photo-order-height);
+}
+
+.next-photo-button{
+    position: absolute;
+    left: calc(100% - var(--photo-switcher-right-margin) - var(--photo-switcher-width)*1.5);
+    top: 50%;
+    width: var(--photo-switcher-width);
+    height: var(--photo-switcher-height);
+    border-radius: 50%;
+    cursor: pointer;
+}
