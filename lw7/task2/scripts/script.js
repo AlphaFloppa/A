@@ -21,7 +21,7 @@ for(let i=0; i<likes_buttons.length; ++i)
         else{
             like_symbols[i].style.color = "red";
             likes_counts[i].style.color = "black";
-            likes_counts[i].innerHTML = toString(parseInt(likes_counts[i].innerHTML) + 1);
+            likes_counts[i].innerHTML = toString(parseInt(likes_counts[i].innerHTML) - 1);
             likes_buttons[i].style.backgroundColor = "rgba(34, 34, 34, 0.05)";
         }
         likes_buttons[i].IsActive = !likes_buttons[i].IsActive;
