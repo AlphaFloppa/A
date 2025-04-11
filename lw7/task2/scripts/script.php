@@ -13,20 +13,6 @@ $posts_data = [
     json_decode(file_get_contents("../post2-data.json"), true)
 ];
 
-$html = str_replace("../", 
-            "../../",
-            $html 
-);
-$html = str_replace(
-            "scripts/", 
-            "",
-            $html
-);
-$html = str_replace(
-    "styles/", 
-    "../styles/",
-    $html
-);
 for($i = 0; $i < $posts_count; ++$i)
 {
     $html = preg_replace($username_regex_pattern, 

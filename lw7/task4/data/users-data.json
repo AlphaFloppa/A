@@ -1,0 +1,5 @@
+[
+    {"id":1, "profile-page-path":"../user1-profile/index.html"},
+    {"id":2, "profile-page-path":"../user2-profile/index.html"},
+    {"id":3, "profile-page-path":"../user3-profile/index.html"}
+]

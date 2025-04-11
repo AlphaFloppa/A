@@ -1,0 +1,169 @@
+@import url("../../../fonts/fonts.css");
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+  --distance-between-photo-and-login-form: calc(100svw/14);
+  --distance-between-inputs: 10px;
+  --input-color: #f0ebebf1;
+  --input-text-color: #9d9595f1;
+  --suggest-text-color: #141517; 
+}
+
+body{
+    margin: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content{
+    height: 100svh;
+    width: 100svw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--distance-between-photo-and-login-form);
+}
+
+.inputs-container{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--distance-between-inputs);
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.input{
+    background-color: var(--input-color);
+    border: 1px;
+    border-radius: 10px;
+    height: 44px;
+    width: 343px;
+    padding: 12px 13px;
+}
+
+.input:active{
+   outline: 1p x solid rgba(63, 138, 224, 1);
+}
+
+.format-help-text{
+    text-align: center;
+    font-family: Golos UI, sans-serif;
+    font-size: 12px;
+    color: var(--input-text-color);
+    margin-top: 2px;
+}
+
+.input-suggest-text{
+    font-family: Golos UI, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--suggest-text-color);
+
+}
+
+@keyframes button-animation {
+    from{
+       border-radius: 9px;       
+    }    
+    to{
+        border-radius: 0px;
+    }
+}
+
+.continue-button:hover{
+    animation: button-animation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.continue-button{
+    background-color: black;
+    color: white;
+    height: 35px;
+    width: 343px;
+    border-radius: 9px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login-left-picture{
+    min-width: 90px;
+    width: 50%;
+}
+
+.email-container{
+    display: flex;
+    flex-direction: column; 
+    align-items: baseline;
+}
+
+.form{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+.left-part-container{
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+}
+
+.login-text{
+    position: absolute;
+    left: 44%;
+    top : -20%;
+    z-index: 10;
+    text-align: start;
+    font-family: Golos UI, sans-serif;
+    font-size: 5lvw;
+    font-weight: 700;
+    line-height: 180px;
+    letter-spacing: -1.5px;
+    color: #222222;
+}
+
+.eye-icon{
+    position: absolute;
+    left: 306px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.password-input-container{
+    position: relative;
+    display: inline;
+}
+
+.warning-text-emoji{
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.warning-label-container{
+    order: -1;
+    padding: 12px;
+    border-radius: 10px;
+    width: 343px;
+    background-color: rgba(255, 236, 236, 1);
+}
+
+.warning-text{
+    color: rgba(116, 0, 0, 1);
+    font-family: Golos UI, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+}
