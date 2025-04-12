@@ -1,5 +1,7 @@
 <?php
-$dateArray = explode(".", $_POST["date"]);
+if(str_contains($_POST["date"], ".")) $dateArray = explode(".", $_POST["date"]);
+if(str_contains($_POST["date"], "-")) $dateArray = explode("-", $_POST["date"]);
+if(str_contains($_POST["date"], "/")) $dateArray = explode("/", $_POST["date"]);
 for ($i = 0; $i < 3; ++$i)
   if (strlen($dateArray[$i]) == 4) {
     $year = (int) $dateArray[$i];
@@ -8,7 +10,7 @@ for ($i = 0; $i < 3; ++$i)
     break;
   }
 
-for ($i = 0; $i < 2; ++$i)
+for ($i = 0; $i < 1; ++$i)
   if ($dateArray[$i] > 12) {
     $day = (int) $dateArray[$i];
     unset($dateArray[$i]);
@@ -20,13 +22,6 @@ if (count($dateArray) != 1) {
   $month = (int) $dateArray[1];
   $day = (int) $dateArray[0];
 }
-
-echo ($day);
-echo (nl2br("\n"));
-echo ($month);
-echo (nl2br("\n"));
-echo ($year);
-echo (nl2br("\n"));
 
 switch ($month) {
   case 1:
