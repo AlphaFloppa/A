@@ -18,6 +18,8 @@ for(let i=0; i<show_more_buttons.length; ++i)
 let likes_buttons = document.querySelectorAll(".likes-button");
 let like_symbols = document.querySelectorAll(".like-symbol");
 let likes_counts = document.querySelectorAll(".likes-count");
+console.log(likes_counts[0].innerHTML);
+console.log(likes_buttons);
 likes_buttons.forEach(
     (item) => {item.IsActive = false;})
 for(let i=0; i<likes_buttons.length; ++i)
@@ -25,13 +27,13 @@ for(let i=0; i<likes_buttons.length; ++i)
         if(!likes_buttons[i].IsActive){
             like_symbols[i].style.color = "white";
             likes_counts[i].style.color = "white";
-            likes_counts[i].innerHTML = toString(parseInt(likes_counts[i].innerHTML) + 1);
+            likes_counts[i].innerHTML = (parseInt(likes_counts[i].innerHTML) + 1).toString()
             likes_buttons[i].style.backgroundColor = "red";
         }
         else{
             like_symbols[i].style.color = "red";
             likes_counts[i].style.color = "black";
-            likes_counts[i].innerHTML = toString(parseInt(likes_counts[i].innerHTML) + 1);
+            likes_counts[i].innerHTML = (parseInt(likes_counts[i].innerHTML) + 1).toString()
             likes_buttons[i].style.backgroundColor = "rgba(34, 34, 34, 0.05)";
         }
         likes_buttons[i].IsActive = !likes_buttons[i].IsActive;
