@@ -1,12 +1,11 @@
 function Pivo(array){
     if(array === null || array.length == 0 || array === undefined) return null;
+    let StrArray = array.map((item) => item.toString())
     map = new Map();
-    array.forEach(element => {
-        map.set(element.toString(), array.join("").match(element).length + array.join("").match(element.toString()).length);
+    StrArray.forEach(element => {
+        map.set(element, StrArray.filter((item) => item == element).length);
     });
     return Object.fromEntries(map);
 }
 
-let abc = Pivo(["привет", "f", 1, "1"]);
-//for(let i in a) console.log(i, a[i]);
-console.log(abc);
+console.log(Pivo(["привет", "f", 1, "1"]));
