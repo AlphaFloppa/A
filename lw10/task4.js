@@ -8,4 +8,7 @@ function MergeObjects(obj1, obj2){
     return mergement;
 }
 
-MergeObjects({a: 1, b: 2}, {b: 4, c: 3});
+const copy = {...obj1}
+const func = (obj1, obj2) => ({...obj1, ...obj2})
+// MergeObjects({a: 1, b: 2}, {b: 4, c: 3});
+console.log(func({a: 1, b: 2, d: 4}, {b: 4, c: 3}))

@@ -5,16 +5,12 @@ function CreatePassword(length){
     const SpecialChars = "~!$&*+!;:?/,.".split("");
     const Digits = "0123456789".split("");
     let a = Math.floor(Math.random()*25);
-    console.log(a);
     let password = UpperCaseLetters[a];
     a = Math.floor(Math.random()*25);
-    console.log(a);
     password += LowerCaseLetters[a];
     a = Math.floor(Math.random()*9);
-    console.log(a);
     password += Digits[a];
     a = Math.floor(Math.random()*(SpecialChars.length - 1));
-    console.log(a);
     password += SpecialChars[a];
     for(let i=4; i < length; i++) 
         password += UpperCaseLetters.concat(LowerCaseLetters, Digits, SpecialChars)[Math.ceil(Math.random()*(9+26+26+SpecialChars.length))];

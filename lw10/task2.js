@@ -5,7 +5,7 @@ function CountVowels(str){
         array.forEach(element => {
             output += element;
         });
-        console.log(array.length + " (" + output + ")");
+        console.log(array.length + " (" + array + ")");
     }
 }
 
