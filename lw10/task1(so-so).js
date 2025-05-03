@@ -1,6 +1,6 @@
 function IsPrimeNumber(item){
     if(item.length == 0) return new TypeError("UltraPivo");
-    if(Number(item)){
+    if(typeof(item) === "number"){
         for(i=2; i <= Math.sqrt(item,); i++){
             if(item % i === 0){
                 console.log(item + " не простое число");
@@ -14,7 +14,6 @@ function IsPrimeNumber(item){
     if(!Array.isArray(item)) throw new TypeError("invalid input");
     let unprimesArray = item.filter((item) => !IsPrime(item));
     let array = item.filter(IsPrime);
-    console.log(array);
     if(array.length != 0){
         let str = "";
         array.forEach(element => {
@@ -40,7 +39,7 @@ function IsPrimeNumber(item){
         }
     }
 
-    
+  
     function IsPrime(number){
         for(i=2; i <= Math.sqrt(number); i++)
             if(number % i === 0) return false;
