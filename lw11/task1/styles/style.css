@@ -1,0 +1,201 @@
+@import url("../fonts/fonts.css");
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+  --gallery-height: 455px; 
+  --post-image-width: 474px;
+  --space-between-posts: 30px;
+  --photo-order-width: 44px;
+  --photo-order-height: 24px;
+  --photo-order-right-margin: 18px;
+  --photo-order-top-margin : 10%;
+  --photo-switcher-width: 25px;
+  --photo-switcher-height: 25px;
+  --photo-switcher-margin: 3%;
+}
+
+.main-container{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.sidebar{
+    height: 100%;
+    position: absolute;
+    width: 5%;
+    min-width: 60px;
+    padding-top: 45px;
+    border-right: 2px solid rgba(34, 34, 34, 0.2);
+    z-index: 1;
+}
+
+.posts-container{
+    padding: 50px 75px;
+    margin: 0 auto;
+    max-width: 40%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.post{
+    position: relative;
+}
+
+.profile-button,
+.plus-button,
+.home-button{
+    width: 24px;
+    height: 24px;
+    margin: 0px calc((100% - 24px) / 2) 10px;
+}
+
+.home-button{
+    margin: 0px calc((100% - 24px) / 2) 2px;
+}
+
+.post-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px auto 10px;
+}
+
+.post-header__user-avatar{
+    vertical-align: middle;
+}
+
+.post-header__edit-button{
+    flex-shrink: 0;
+}
+
+.post-header__user-name, 
+.post-user-description,
+.reveal-description-button,
+.post-time,
+.likes-count{
+    font-family: Golos UI, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.15px;
+    font-size: 14px;
+}
+
+.post-user-description,
+.reveal-description-button,
+.likes-count{
+    font-size: 15px;
+}
+
+.reveal-description-button,
+.post-time{
+    opacity: 50%;
+}
+
+.reveal-description-button{
+    text-decoration: underline;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.post-user-description.short{
+    color: black;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-time{
+    font-size: 14px;
+}
+
+.likes-button{
+    margin: 15px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    border: 1px solid rgba(34, 34, 34, 0.05) ;
+    border-radius: 8px;
+    background-color: rgba(34, 34, 34, 0.05);
+    padding: 6px 12px 6px 12px;
+    transition: background-color 0.5s;    
+    cursor: pointer;
+}
+
+.like-symbol{
+    color: red;
+}
+
+.active-window-symbol{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    background-color: rgba(34, 34, 34, 1);
+}
+
+.description{
+    margin-bottom: 8px;
+}
+
+.container,
+.reveal-description-button,
+.likes-button{
+    cursor: pointer;
+}
+
+.post-photos-gallery{
+    position: relative;
+    width: 100%;
+    height: var(--gallery-height);
+}
+
+.post-photo{
+    width: 100%;
+    height: 100%;
+}
+
+.post-photo:not(.active){
+    position: absolute;
+    visibility: hidden;
+}
+
+.post-number{
+    background-color: rgba(34, 34, 34, 0.5);
+    border-radius: 20px;
+    padding: 0px 10px;
+    color: white;
+    font-family: Golos UI;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    text-align: center;
+    position: absolute;
+    left: calc(100% - var(--photo-order-right-margin) - var(--photo-order-width));
+    top: var(--photo-order-top-margin);
+    width: var(--photo-order-width);
+    height: var(--photo-order-height);
+}
+
+.switch-buttons{
+    padding: 0 var(--photo-switcher-margin);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    transform: translateY(calc(-1*(var(--gallery-height)/2 + 10px)));
+}
+
+.next-photo-button,
+.previous-photo-button{
+    width: var(--photo-switcher-width);
+    height: var(--photo-switcher-height);
+    border-radius: 50%;
+    cursor: pointer;
+}
