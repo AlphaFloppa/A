@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Content</title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <div class = "grid-container">
+            <div class = "sidebar">
+                <div class = "home-button-container">
+                    <input type = "image" name = "home-button" class = "home-button" src = "../static/Home 24.png" alt = "Try Ctrl-R"/>
+                    <div class = "active-window-symbol"></div>
+                </div>
+                <input type = "image" name = "profile-button" class = "profile-button" src = "../static/User 24.png" alt = "Try Ctrl-R"/>
+                <input type = "image" name = "plus-button" class = "plus-button" src = "../static/Plus 24.png" alt = "Try Ctrl-R"/>
+            </div>
+            <div class = "post1" data-handled = "no">
+                <div class = "post-header">
+                    <div class = "container">
+                        <img src = "../static/Avatar.png" alt = "Try Ctrl-R" class = "post-header__user-avatar"/>
+                        <span class = "post-header__user-name" data-handled = "no">Lorem ipsum</span>
+                    </div>
+                    <input type = "image" name = "post-header__edit-button" 
+                        class = "post-header__edit-button" src = "../static/Edit 24.png" alt = "Try Ctrl-R"/>
+                </div>
+                <div class = "post-photos-gallery">
+                    <img src = "../static/post-img.png" alt = "Try Ctrl-R">
+                    <span class = "post-number">1/3</span>
+                    <img class = "next-photo-button" src = "../static/Slider Button.png" alt = "Try Ctrl-R">
+                </div>
+                <button class = "likes-button">
+                    <span class = "like-symbol">❤</span>
+                    <span class = "likes-count">203</span>
+                </button>
+                <div class = "description">
+                    <p class = "post-user-description short">Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: 
+                        «Поздно ночью, в уснувшей долине, на самом дне, в городке, занесенном снегом по ручку двери...» </p>
+                    <span class = "reveal-description-button">еще</span>
+                </div>
+                <span class = "post-time" data-handled = "no">2 часа назад</span>
+            </div>
+            <div class = "post2" data-handled = "no">
+                <div class = "post-header">
+                    <div class = "container">
+                        <img src = "../static/Avatar(1).png" alt = "Try Ctrl-R" class = "post-header__user-avatar"/>
+                        <span class = "post-header__user-name" data-handled = "no">Lorem ipsum</span>
+                    </div>
+                    <input type = "image" name = "post-header__edit-button" 
+                        class = "post-header__edit-button" src = "../static/Edit 24.png" alt = "Try Ctrl-R"/>
+                </div>
+                <div class = "post-imgs-gallery">
+                    <img src = "../static/post-img2.png" alt = "Try Ctrl-R">
+                </div>
+                <button class = "likes-button">
+                    <span class = "like-symbol">❤</span>
+                    <span class = "likes-count">203</span>
+                </button>
+                <div class = "description">
+                    <p class = "post-user-description short">Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: 
+                        «Поздно ночью, в уснувшей долине, на самом дне, в городке, занесенном снегом по ручку двери...» </p>
+                    <span class = "reveal-description-button">еще</span>
+                </div>
+                <span class = "post-time" data-handled = "no">3 часа назад</span>
+            </div>
+        </div> 
+        <script src = "scripts/script.js"></script>       
+    </body>
+</html>

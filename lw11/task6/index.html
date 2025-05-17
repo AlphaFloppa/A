@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset = "UTF-8"/>
+        <!--<meta name = "viewport" content = "width=600, height=350, initial-scale=1"/>-->
+        <meta name="viewport" content="width=1220, initial-scale=1"/>
+        <title>Login</title>
+        <link href="styles/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="main-content">
+            <div class = "left-part-container">
+                <span class="login-text">Войти</span>
+                <img src="../static/guy.png" alt="Try Ctrl-R" class = "login-left-picture"/>
+            </div>
+            <div class="form">
+                <form class = "form">
+                    <div class = "email-container">
+                        <label class="input-suggest-text">
+                            Электропочта<br/>
+                            <input type="email" name="login" class="input" id = "input-email" required value = ""/>
+                        </label>
+                        <span class="text">Введите электропочту в формате *****@***.**</span>
+                    </div>
+                    <label class="input-suggest-text" for = "input-password">Пароль</label>
+                    <div class = "password-input-container">
+                        <input type="password" name="password" class="input" id = "input-password" value = "" required/>
+                        <img src = "../static/eye-open-icon.png" alt = "Try Ctrl-R" class = "eye-icon">
+                    </div>
+                    <a href="https://google.com">
+                        <input class="continue-button" type = "submit" id = "input-button-continue" value = "Продолжить"/>
+                    </a>
+                </form>
+            </div>
+        </div>
+        <script src = "scripts/script.js"></script>
+    </body>
+</html>
