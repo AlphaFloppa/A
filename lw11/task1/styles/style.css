@@ -11,9 +11,9 @@
   --photo-order-width: 44px;
   --photo-order-height: 24px;
   --photo-order-right-margin: 18px;
-  --photo-order-top-margin : 10%;
-  --photo-switcher-width: 25px;
-  --photo-switcher-height: 25px;
+  --photo-order-top-margin : 8%;
+  --photo-switcher-width: 29px;
+  --photo-switcher-height: 29px;
   --photo-switcher-margin: 3%;
 }
 
@@ -150,6 +150,14 @@
     cursor: pointer;
 }
 
+.post-photos-slider{
+    position: relative;
+}
+
+.post-photos-slider.modal{
+    z-index: 10;
+}
+
 .post-photos-gallery{
     position: relative;
     width: 100%;
@@ -157,6 +165,7 @@
 }
 
 .post-photo{
+    cursor: pointer;
     width: 100%;
     height: 100%;
 }
@@ -186,10 +195,12 @@
 
 .switch-buttons{
     padding: 0 var(--photo-switcher-margin);
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    transform: translateY(calc(-1*(var(--gallery-height)/2 + 10px)));
+    position: absolute;
+    top: 50%;
 }
 
 .next-photo-button,
