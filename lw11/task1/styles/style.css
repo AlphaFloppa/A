@@ -1,4 +1,9 @@
 @import url("../fonts/fonts.css");
+@import url("sidebar.css");
+
+body{
+    margin: 0;
+}
 
 *{
     box-sizing: border-box;
@@ -12,8 +17,7 @@
   --photo-order-height: 24px;
   --photo-order-right-margin: 18px;
   --photo-order-top-margin : 8%;
-  --photo-switcher-width: 29px;
-  --photo-switcher-height: 29px;
+  --photo-switcher-size: 29px;
   --photo-switcher-margin: 3%;
 }
 
@@ -21,16 +25,6 @@
     position: relative;
     display: flex;
     flex-flow: row nowrap;
-}
-
-.sidebar{
-    height: 100%;
-    position: absolute;
-    width: 5%;
-    min-width: 60px;
-    padding-top: 45px;
-    border-right: 2px solid rgba(34, 34, 34, 0.2);
-    z-index: 1;
 }
 
 .posts-container{
@@ -45,18 +39,6 @@
 
 .post{
     position: relative;
-}
-
-.profile-button,
-.plus-button,
-.home-button{
-    width: 24px;
-    height: 24px;
-    margin: 0px calc((100% - 24px) / 2) 10px;
-}
-
-.home-button{
-    margin: 0px calc((100% - 24px) / 2) 2px;
 }
 
 .post-header{
@@ -132,14 +114,6 @@
     color: red;
 }
 
-.active-window-symbol{
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    margin: 0 auto 10px;
-    background-color: rgba(34, 34, 34, 1);
-}
-
 .description{
     margin-bottom: 8px;
 }
@@ -151,11 +125,36 @@
 }
 
 .post-photos-slider{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
     position: relative;
+    gap: 5px;
 }
 
 .post-photos-slider.modal{
     z-index: 10;
+}
+
+.modal-window{
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.modal-layer{
+    content: "";
+    cursor: pointer;
+    display: block;
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    background-color: black;
+    opacity: 65%;
 }
 
 .post-photos-gallery{
@@ -203,10 +202,19 @@
     top: 50%;
 }
 
+.modal-window-exit-btn{
+    border-radius: 35%;
+    border: 2px solid black;
+    width: 25px;
+    height: 25px;
+    background-image: url("exit_modal_btn.png");
+    background-size: 100% 100%;
+}
+
 .next-photo-button,
 .previous-photo-button{
-    width: var(--photo-switcher-width);
-    height: var(--photo-switcher-height);
+    width: var(--photo-switcher-size);
+    height: var(--photo-switcher-size);
     border-radius: 50%;
     cursor: pointer;
 }
