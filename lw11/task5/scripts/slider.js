@@ -1,5 +1,31 @@
-window.addEventListener("load", function(){
-    document.querySelectorAll(".post-photos-slider").forEach(function(item){Slider(item)});
+    /**
+    * @description возвращает готовый пустой слайдер с классами но без листенеров
+    */
+    function CreateSlider(){
+        let slider = document.createElement("div");
+        slider.classList.add("post-photos-slider");
+        let gallery = document.createElement("div");
+        gallery.classList.add("post-photos-gallery");
+        let indexer = document.createElement("span");
+        indexer.classList.add("post-number");
+        indexer.textContent = "0/0";
+        let switch_buttons = document.createElement("div");
+        switch_buttons.classList.add("switch-buttons");
+        let prev_btn = document.createElement("img");
+        prev_btn.classList.add("previous-photo-button");
+        let next_btn = document.createElement("img");
+        next_btn.classList.add("next-photo-button");
+        prev_btn.setAttribute("src", "../static/slider_button_left.png");
+        prev_btn.setAttribute("alt", "Try Ctrl-R");
+        next_btn.setAttribute("src", "../static/slider_button_right.png");
+        next_btn.setAttribute("alt", "Try Ctrl-R");
+        switch_buttons.appendChild(prev_btn);
+        switch_buttons.appendChild(next_btn);
+        slider.appendChild(gallery);
+        slider.appendChild(indexer);
+        slider.appendChild(switch_buttons);
+        return slider;
+    }
 
     function Slider(slider_item){                    //дает объекту слайдера соответсвующее поведение
         let gallery = slider_item.querySelector(".post-photos-gallery");
@@ -17,7 +43,6 @@ window.addEventListener("load", function(){
         switch_back_btn.addEventListener("click", function(){
             Switch(gallery.firstElementChild, "previous")}
         );
-    }
     /**
  * @description организует логику перехода на другое фото и возможности открытия в модальном окне 
  * @param {photo_html_code} node - разметка фото
@@ -29,8 +54,6 @@ window.addEventListener("load", function(){
             Switch(node.nextElementSibling, direction);
             return null;
         }
-        console.log(node);
-        console.log(node.parentNode);
         node.classList.remove("active");
         node.removeEventListener("click", A);
         let indexer = node.parentNode.parentNode.querySelector(".post-number");
@@ -112,4 +135,4 @@ window.addEventListener("load", function(){
             document.querySelector("body").style.overflow = "visible";    
         }
     }
-});
+}

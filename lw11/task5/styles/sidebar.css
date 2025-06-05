@@ -1,0 +1,29 @@
+.sidebar{
+    height: 100%;
+    position: absolute;
+    width: 5%;
+    min-width: 60px;
+    padding-top: 45px;
+    border-right: 2px solid rgba(34, 34, 34, 0.2);
+    z-index: 1;
+}
+
+.profile-button,
+.plus-button,
+.home-button{
+    width: 24px;
+    height: 24px;
+    margin: 0px calc((100% - 24px) / 2) 10px;
+}
+
+.home-button{
+    margin: 0px calc((100% - 24px) / 2) 2px;
+}
+
+.active-window-symbol{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    background-color: rgba(34, 34, 34, 1);
+}

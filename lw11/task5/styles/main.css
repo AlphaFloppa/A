@@ -1,0 +1,125 @@
+@import url(../../fonts/fonts.css);
+@import url(sidebar.css);
+@import url(slider.css);
+
+:root{ 
+  --photo-order-width: 44px;
+  --photo-order-height: 24px;
+  --photo-order-right-margin: 8%;
+  --photo-order-top-margin : 8%;
+  --photo-switcher-size: 29px;
+  --photo-switcher-margin: 3%;
+}
+
+ * {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    position: relative;
+}
+
+.main-container{
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+}
+
+
+.creation-container{
+    margin: 70px 0 20px ;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.preview-area{
+    width: 30svw;
+    height: 30svw;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: rgba(242, 243, 245, 1);
+    border-radius: 5%;
+}
+
+.photo-pic{
+    width: 75px;
+    height: 75px;
+}
+
+.add-photo-btn::before{
+    content: "";
+    background-image: url("../../static/Plus-square\ 16.png");
+    background-size: 16px 16px;
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;   
+    display: block;
+}
+
+.add-photo-btn{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.add-photo-btn .input-label{
+    color:aqua;
+    font-family: Golos UI;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+}
+
+.add-first-photo-btn .input-label{
+    display: block;
+    height: 48px;
+    text-align: center;
+    padding: 16px;
+}
+
+.add-first-photo-btn,
+.share-btn{
+    position: relative;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-family: Golos UI;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.share-btn{
+    margin-top: auto;
+    padding: 16px;
+}
+
+.desc-area{
+    width: 100%;
+    border: none;
+    background-color: white;
+    font-family: Golos UI;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    resize: none;
+}
+
+button:disabled{
+    background-color: rgba(180, 180, 180, 1);
+}
+
+button:not(:disabled),
+.add-photo-btn,
+.preview-area, 
+.input-label{
+    cursor: pointer;
+}
