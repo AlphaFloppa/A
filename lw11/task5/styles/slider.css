@@ -22,7 +22,7 @@
 
 .modal-layer{
     content: "";
-    cursor: pointer;
+    cursor: url(../../static/cat.png) 8 4, pointer;
     display: block;
     width: 100dvw;
     height: 100dvh;
@@ -49,7 +49,8 @@
 
 .post-photo:not(.active){
     position: absolute;
-    visibility: hidden;
+    width: 0;
+    height: 0;
 }
 
 .post-number{
@@ -73,6 +74,7 @@
 .switch-buttons{
     padding: 0 var(--photo-switcher-margin);
     width: 100%;
+    cursor: pointer;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -95,4 +97,8 @@
     height: var(--photo-switcher-size);
     border-radius: 50%;
     cursor: pointer;
+}
+
+.modal-window .post-photo{
+    cursor: default;
 }

@@ -28,7 +28,7 @@ body{
 
 
 .creation-container{
-    margin: 70px 0 20px ;
+    margin: 70px 0 35px ;
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
@@ -86,7 +86,7 @@ body{
 .add-first-photo-btn,
 .share-btn{
     position: relative;
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: black;
     color: white;
     font-family: Golos UI;
@@ -115,11 +115,11 @@ body{
 
 button:disabled{
     background-color: rgba(180, 180, 180, 1);
+    cursor: not-allowed;
 }
 
 button:not(:disabled),
 .add-photo-btn,
-.preview-area, 
 .input-label{
     cursor: pointer;
 }

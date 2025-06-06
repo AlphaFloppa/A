@@ -32,17 +32,20 @@
         let indexer = slider_item.querySelector(".post-number");
         let switch_forward_btn = slider_item.querySelector(".switch-buttons > .next-photo-button");
         let switch_back_btn = slider_item.querySelector(".switch-buttons > .previous-photo-button");
-        if(slider_item.querySelector(".post-photo.active") == null){
-            gallery.firstElementChild.classList.add("active");
-            indexer.textContent = "1/" + gallery.childElementCount;
+        if(gallery.childElementCount != 0){
+            if(slider_item.querySelector(".post-photo.active") == null){
+                gallery.firstElementChild.classList.add("active");
+                indexer.textContent = "1/" + gallery.childElementCount;
+            }
+            gallery.querySelector(".active").addEventListener("click", AddModalBehaviour);
         }
-        gallery.querySelector(".active").addEventListener("click", A);
         switch_forward_btn.addEventListener("click", function(){
             Switch(gallery.firstElementChild, "next")}
         );
-        switch_back_btn.addEventListener("click", function(){
+        switch_back_btn.addEventListener("click", function(){   
             Switch(gallery.firstElementChild, "previous")}
         );
+    }
     /**
  * @description организует логику перехода на другое фото и возможности открытия в модальном окне 
  * @param {photo_html_code} node - разметка фото
@@ -55,7 +58,7 @@
             return null;
         }
         node.classList.remove("active");
-        node.removeEventListener("click", A);
+        node.removeEventListener("click", AddModalBehaviour);
         let indexer = node.parentNode.parentNode.querySelector(".post-number");
         if(direction == "next")
         {
@@ -64,14 +67,14 @@
                 indexer.textContent = (parseInt(
                     indexer.textContent.split("/")[0]) + 1) + "/" + node.parentNode.childElementCount;
                 if(document.querySelector(".modal-window") == null)
-                    node.nextElementSibling.addEventListener("click", A);
+                    node.nextElementSibling.addEventListener("click", AddModalBehaviour);
                     //    если оно уже не открыто как модальное
             }
             else{
                 node.parentNode.firstElementChild.classList.add("active");
                 node.parentNode.nextElementSibling.textContent = 1 + "/" + node.parentNode.childElementCount;
                 if(document.querySelector(".modal-window") == null)
-                    node.parentNode.firstElementChild.addEventListener("click", A);
+                    node.parentNode.firstElementChild.addEventListener("click", AddModalBehaviour);
                 //передаем в функцию именно слайдер
             }
 
@@ -83,13 +86,13 @@
                 indexer.textContent = (parseInt(
                     indexer.textContent.split("/")[0]) - 1) + "/" + node.parentNode.childElementCount;
                 if(document.querySelector(".modal-window") == null)
-                    node.previousElementSibling.addEventListener("click", A);
+                    node.previousElementSibling.addEventListener("click", AddModalBehaviour);
             }
             else{
                 node.parentNode.lastElementChild.classList.add("active");
                 indexer.textContent = node.parentNode.childElementCount + "/" + node.parentNode.childElementCount;
                 if(document.querySelector(".modal-window") == null)
-                    node.parentNode.lastElementChild.addEventListener("click", A);
+                    node.parentNode.lastElementChild.addEventListener("click", AddModalBehaviour);
             }
         }      
     }
@@ -124,15 +127,14 @@
         document.querySelector(".modal-layer").addEventListener("click", function(){RemoveModal(slider)});
     }
 
-    function A(event){ViewInModal(event.target.parentNode.parentNode);}
+    function AddModalBehaviour(event){ViewInModal(event.target.parentNode.parentNode);}
     function RemoveModal(slider){
         if(document.querySelector(".modal-window") != null){
             slider.querySelector(".post-number").textContent = document.querySelector(".modal-window .post-number").textContent;
             slider.querySelector(".post-photos-gallery").innerHTML = document.querySelector(".modal-window .post-photos-gallery").innerHTML;
-            Slider(slider);             
+            slider.querySelector(".post-photos-gallery .active").addEventListener("click", AddModalBehaviour);             
             //выгрузка прогресса в основной слайдер путем копирования разметки галереи с active классами и индексатора
             document.querySelector("body").removeChild(document.querySelector(".modal-window"));
             document.querySelector("body").style.overflow = "visible";    
         }
     }
-}

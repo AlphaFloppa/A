@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset = "UTF-8"/>
+        <meta name="viewport" content="width=1220, initial-scale=1"/>
+        <title>Login</title>
+        <link href="styles/style.css" rel="stylesheet"/>
+        <script src = "scripts/script.js" async></script>    
+    </head>
+    <body>
+        <div class="main-content">
+            <div class = "head-block">
+                <span class="head-block__suggest-text">Войти</span>
+                <img src="../static/guy.png" alt="Try Ctrl-R" class = "head-block__picture"/>
+            </div>
+            <form class="data-block">
+                <div class = "email-container">
+                    <label class="email-container__suggest-text">
+                        Электропочта<br/>
+                        <input type="email" name="login" class="email-container__input" id = "input-email" required value = ""/>
+                    </label>
+                    <span class="email-container__format-example">Введите электропочту в формате *****@***.**</span>
+                </div>
+                <div class = "password-container">
+                    <label class="password-container__suggest-text">
+                        Пароль
+                        <input type="password" name="password" class="password-container__input" id = "input-password" required/>
+                    </label>
+                    <img src = "../static/eye-open-icon.png" alt = "Try Ctrl-R" class = "password-container__eye-icon_mode_active"/>
+                </div>
+                <a href="https://google.com" class="submit-container">
+                    <input class="submit-container__btn" type = "submit" id = "input-button-continue" value = "Продолжить"/>
+                </a>
+            </form>
+        </div>
+    </body>
+</html>
