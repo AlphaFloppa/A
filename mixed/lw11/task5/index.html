@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create post</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <script src = "scripts/slider.js" async></script>
+        <script src = "scripts/main.js" async></script>
+        
+    </head>
+    <body>
+         <div class = "sidebar">
+                <div class = "home-button-container">
+                    <input type = "image" name = "home-button" class = "home-button" src = "../static/Home 24.png" alt = "Try Ctrl-R"/>
+                    <div class = "active-window-symbol"></div>
+                </div>
+                <input type = "image" name = "profile-button" class = "profile-button" src = "../static/User 24.png" alt = "Try Ctrl-R"/>
+                <input type = "image" name = "plus-button" class = "plus-button" src = "../static/Plus 24.png" alt = "Try Ctrl-R"/>
+            </div>
+        <div class = "main-container">
+            <div class = "creation-container">
+                <div class = "preview-area">
+                    <img src = "../static/Text.png" class = "photo-pic"/>
+                    <div class = "add-first-photo-btn">
+                        <label class="input-label">
+                            Добавить фото
+                            <input type = "file" class = "first" accept = "image/*" hidden/>
+                        </label>
+                    </div>
+                </div>  
+                <div class = "add-photo-btn">
+                    <label class="input-label">
+                        Добавить фото
+                        <input type = "file" class = "extra" hidden accept = "image/*"/>
+                    </label>
+                </div>
+                <textarea class = "desc-area" placeholder = "Добавьте подпись" required rows=5></textarea>
+                <button class = "share-btn">Поделиться</button>
+            </div>            
+        </div>     
+    </body>
+</html>

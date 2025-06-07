@@ -1,0 +1,123 @@
+@import url("../../fonts/fonts.css");
+@import url("sidebar.css");
+@import url("slider.css");
+
+body{
+    margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+  --gallery-height: 455px; 
+  --post-image-width: 474px;
+  --space-between-posts: 30px;
+  --photo-indexer-width: 44px;
+  --photo-indexer-height: 24px;
+  --photo-indexer-right-margin: 18px;
+  --photo-indexer-top-margin : 8%;
+  --photo-switcher-size: 29px;
+  --photo-switcher-margin: 3%;
+}
+
+.main-content{
+    position: relative;
+}
+
+.posts-container{
+    padding: 50px 75px;
+    margin: 0 auto;
+    width: 40svw;
+    min-width: 550px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 45px;
+    align-items: center;
+}
+
+.post{
+    position: relative;
+}
+
+.post-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px auto 10px;
+}
+
+.post-header__edit-button{
+    width: 24px;
+    height: 24px;
+}
+
+.post-header__author-avatar{
+    vertical-align: middle;
+}
+
+.post-header__author-name,
+.description__reveal-btn,
+.post__creation-time,
+.likes-btn__counter{
+    font-family: Golos UI, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.15px;
+    font-size: 14px;
+}
+
+.description__reveal-btn,
+.likes-btn__counter{
+    font-size: 15px;
+}
+
+.description__reveal-btn,
+.post__creation-time{
+    opacity: 50%;
+}
+
+.description__text_mode_reduced{
+    color: black;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post__creation-time{
+    font-size: 14px;
+}
+
+.likes-btn{
+    margin: 15px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    border: 1px solid rgba(34, 34, 34, 0.05) ;
+    border-radius: 8px;
+    background-color: rgba(34, 34, 34, 0.05);
+    padding: 6px 12px 6px 12px;    
+    cursor: pointer;
+}
+
+.likes-btn__pic{
+    color: red;
+}
+
+.description{
+    font-family: Golos UI, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.15px;
+    font-size: 15px;
+}
+
+.description__reveal-btn{
+    position: relative;
+    top: -1em;
+}
+
+.description__reveal-btn,
+.likes-btn{
+    cursor: pointer;
+}
